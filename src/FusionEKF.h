@@ -29,19 +29,16 @@ public:
   /**
   * Kalman Filter update and prediction math lives in here.
   */
-  KalmanFilter ekf_;
+  KalmanFilter kalman_filter_;
 
 private:
   bool is_initialized_;
   long previous_timestamp_;
 
-  Tools tools;
   Eigen::MatrixXd R_laser_;
   Eigen::MatrixXd R_radar_;
   Eigen::MatrixXd H_laser_;
-  Eigen::MatrixXd Hj_;
-  int noise_ax;
-  int noise_ay;
+  Tools tools;
 };
 
 #endif /* FusionEKF_H_ */
